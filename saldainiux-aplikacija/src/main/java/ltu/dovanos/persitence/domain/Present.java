@@ -34,8 +34,7 @@ public class Present implements Serializable{
 	private Letter letter = new Letter();
 	
 
-	public Present(Long id, String type, String name, String description, String imageURL, boolean forAdults,
-			Letter letter) {
+	public Present(Long id, String type, String name, String description, String imageURL, boolean forAdults) {
 		super();
 		this.id = id;
 		this.type = type;
@@ -43,7 +42,6 @@ public class Present implements Serializable{
 		this.description = description;
 		this.imageURL = imageURL;
 		this.forAdults = forAdults;
-		this.letter = letter;
 	}
 
 

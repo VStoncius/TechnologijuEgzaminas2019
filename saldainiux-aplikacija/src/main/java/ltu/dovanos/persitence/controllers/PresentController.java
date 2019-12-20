@@ -55,9 +55,11 @@ public class PresentController {
 	@PostMapping("/create")
 	@ApiOperation(value="create",notes="create a present")
 	@Transactional
-	public ResponseEntity<String> createNewPresent(@RequestBody PresentCreatorInfo presentInfo) {
-		if (service.getPresentByName(presentInfo.getPresent().getName())==null) {
-			service.createNewPresent(presentInfo);
+	public ResponseEntity<String> createNewPresent(@RequestBody Present present, Letter letter) {
+		System.out.println(present.toString());
+		System.out.println(letter.toString());
+		if (service.getPresentByName(present.getName())==null) {
+			service.createNewPresent(present, letter);
 			return new ResponseEntity<String>("Saved succesfully", HttpStatus.CREATED);
 			}
 		else
